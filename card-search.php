@@ -43,15 +43,14 @@ if ($trigger == ""){
 }
 $serie = $result->Serie1;
 
+$existe = true;
 
-
-$obj->existe = true;
-
-if (curl_errno($ch))  {
+if ($name == null)  {
         $carteLink = 'https://approachphase.files.wordpress.com/2013/05/148lwsm.png';
-        $obj->existe = false;
+        $existe = false;
 }
 
+$obj->existe = $existe;
 $obj->carte = $carte;
 $obj->carteLink = $carteLink;
 $obj->numCard = $num;

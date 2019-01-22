@@ -131,6 +131,7 @@ function onSuccessEstConnecte(retour){
 function onSuccessCardSearch(retour){
     if (retour.success) {
         var searchResult = $('#cardSearchResult');
+        alert(retour.existe);
         /*$('<div />').class('Card')
             .appendChild($('<div />').class('NumCard').html(retour.carte))*/
         if (retour.existe) {
