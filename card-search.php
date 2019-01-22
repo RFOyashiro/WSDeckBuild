@@ -45,10 +45,11 @@ $serie = $result->Serie1;
 
 
 
-
+$obj->existe = true;
 
 if (curl_errno($ch))  {
         $carteLink = 'https://approachphase.files.wordpress.com/2013/05/148lwsm.png';
+        $obj->existe = false;
 }
 
 $obj->carte = $carte;
