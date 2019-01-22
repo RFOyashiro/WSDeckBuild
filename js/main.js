@@ -133,19 +133,36 @@ function onSuccessCardSearch(retour){
         var searchResult = $('#cardSearchResult');
         /*$('<div />').class('Card')
             .appendChild($('<div />').class('NumCard').html(retour.carte))*/
-        searchResult.html('' +
-            '<div class="Card">' +
-            '   <div class="NumCard">Num  : ' + retour.carte + '</div>' +
-            '   <div class="SerieCard">Serie : ' +	retour.serieCard + '</div>' +
-            '   <div class="PicCard"><a href="javascript:void(0)" id="' + retour.carte + '" onclick="addCardDeck(this);"><img class="card" src="' + retour.carteLink + '"/></a></div>' +
-            '   <div class="NameCard">Name     : ' + retour.nameCard + '</div>' +
-            '   <div class="LevelCard">Level   : ' +	retour.levelCard + '</div>' +
-            '   <div class="CoutCard">Cost    : ' + retour.coutCard + '</div>' +
-            '   <div class="ColorCard">Color : ' +	retour.colorCard + '</div>' +
-            '   <div class="TriggerCard">Trigger : ' + retour.triggerCard + '</div>' +
-            '   <div class="TypeCard">Type    : ' + retour.typeCard + '</div>' +
-            '</div>')
-            .show();
+        if (retour.existe) {
+            searchResult.html('' +
+                '<div class="Card">' +
+                '   <div class="NumCard">Num  : ' + retour.carte + '</div>' +
+                '   <div class="SerieCard">Serie : ' + retour.serieCard + '</div>' +
+                '   <div class="PicCard"><a href="javascript:void(0)" id="' + retour.carte + '" onclick="addCardDeck(this);"><img class="card" src="' + retour.carteLink + '"/></a></div>' +
+                '   <div class="NameCard">Name     : ' + retour.nameCard + '</div>' +
+                '   <div class="LevelCard">Level   : ' + retour.levelCard + '</div>' +
+                '   <div class="CoutCard">Cost    : ' + retour.coutCard + '</div>' +
+                '   <div class="ColorCard">Color : ' + retour.colorCard + '</div>' +
+                '   <div class="TriggerCard">Trigger : ' + retour.triggerCard + '</div>' +
+                '   <div class="TypeCard">Type    : ' + retour.typeCard + '</div>' +
+                '</div>')
+                .show();
+        }
+        else {
+            searchResult.html('' +
+                '<div class="Card">' +
+                '   <div class="NumCard">Num  : ' + retour.carte + '</div>' +
+                '   <div class="SerieCard">Serie : ' + retour.serieCard + '</div>' +
+                '   <div class="PicCard"><img class="card" src="' + retour.carteLink + '"/></a></div>' +
+                '   <div class="NameCard">Name     : ' + retour.nameCard + '</div>' +
+                '   <div class="LevelCard">Level   : ' + retour.levelCard + '</div>' +
+                '   <div class="CoutCard">Cost    : ' + retour.coutCard + '</div>' +
+                '   <div class="ColorCard">Color : ' + retour.colorCard + '</div>' +
+                '   <div class="TriggerCard">Trigger : ' + retour.triggerCard + '</div>' +
+                '   <div class="TypeCard">Type    : ' + retour.typeCard + '</div>' +
+                '</div>')
+                .show();
+        }
     }
     else {
         var searchResult = $('#cardSearchResult');
